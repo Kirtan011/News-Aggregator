@@ -1,0 +1,10 @@
+# Ignore environment variables
+.env
+
+# Ignore node modules
+node_modules/
+
+# (Optional good practices)
+dist/
+build/
+.cache/
