@@ -1,13 +1,14 @@
-News Aggregator
+News Aggregator:
 This is a news aggregator project built using the MERN stack (MongoDB, Express, React, Node.js) and the NewsAPI.org API. The project allows users to view news articles from various sources.
 
-Getting Started
+Getting Started:
 These instructions will help you set up the project on your local machine for development and testing purposes.
 
-Prerequisites
+Prerequisites:
 Node.js and npm installed on your machine
 A NewsAPI.org API key
-Installation
+
+Installation:
 Fork the repository on GitHub.
 Clone the repository to your local machine.
 Navigate to the server directory and create a new file named .env.
@@ -16,10 +17,10 @@ In the server directory, run npm install to install the necessary dependencies.
 Start the server by running node server.js.
 Navigate to the client directory and run npm install to install the necessary dependencies.
 Start the client by running npm run dev.
-Usage
+
+Usage:
 Once the project is set up and running, you can view news articles from various sources on the client side.
 
-Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Contributing:
+Pull requests are welcome.
 
-Please make sure to update tests as appropriate.
