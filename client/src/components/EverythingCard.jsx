@@ -12,13 +12,13 @@ function EverythingCard(props) {
 
         {/* Main Image */}
         {props.imgUrl && (
-          <div className="w-full h-40 overflow-hidden rounded-lg">
-            <img
-              className="w-full h-full object-cover grayscale group-hover:scale-110 group-hover:grayscale-0 transition-all duration-500"
-              src={props.imgUrl}
-              alt="Main Visual"
-            />
-          </div>
+         <div className="w-full h-75 overflow-hidden rounded-lg">  {/* Increased the height */}
+         <img
+           className="w-full h-full object-cover grayscale group-hover:scale-110 group-hover:grayscale-0 transition-all duration-500"
+           src={props.imgUrl}
+           alt="Main Visual"
+         />
+       </div>
         )}
 
         {/* Description */}

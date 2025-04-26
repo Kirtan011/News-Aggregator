@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import AllNews from "./components/AllNews";
 // import Footer from "./components/Footer";
 import TopHeadlines from "./components/TopHeadlines";
+import Footer from "./components/Footer";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CountryNews from "./components/CountryNews";
@@ -20,7 +21,7 @@ function App() {
           <Route path="/country/:iso" element={<CountryNews />} />
         </Routes>
         {/* <Cards />  */}
-        {/* <Footer />   */}
+        <Footer />
       </BrowserRouter>
     </div>
   );
