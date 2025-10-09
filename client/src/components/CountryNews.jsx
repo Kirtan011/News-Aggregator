@@ -64,13 +64,15 @@ function CountryNews() {
         icon={faTriangleExclamation}
         className="text-yellow-400 text-5xl mb-4"
       />
-      <h2 className="text-2xl font-semibold mb-2">Access Restricted</h2>
+      <h2 className="text-2xl font-semibold mb-2">Access Unavailable</h2>
       <p className="text-gray-300">
-        Cannot load this country’s news due to API restrictions.
+        News data for this country cannot be displayed because it requires a
+        <span className="text-blue-400 font-medium"> paid NewsAPI plan</span>.
       </p>
       <p className="mt-4 text-sm opacity-80">
-        Please try viewing{" "}
-        <span className="font-semibold text-blue-400">US news</span> instead.
+        Currently, only{" "}
+        <span className="font-semibold text-blue-400">US news</span> is
+        available under the free plan.
       </p>
     </div>
   );
