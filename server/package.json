@@ -3,11 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "type":"module",
-<<<<<<< HEAD
-  "scripts": {
-=======
  "scripts": {
->>>>>>> Test-Branch
     "start": "node index.js"
   },
   "keywords": [],

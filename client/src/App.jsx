@@ -10,7 +10,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CountryNews from "./components/CountryNews";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
   return (
     <div className="w-full">
       <BrowserRouter>
@@ -20,7 +20,6 @@ function App() {
           <Route path="/top-headlines/:category" element={<TopHeadlines />} />
           <Route path="/country/:iso" element={<CountryNews />} />
         </Routes>
-        {/* <Cards />  */}
         <Footer />
       </BrowserRouter>
     </div>
