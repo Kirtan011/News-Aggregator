@@ -13,7 +13,7 @@ function EverythingCard(props) {
         {props.imgUrl && (
           <div className="w-full h-64 overflow-hidden rounded-xl">
             <img
-              className="w-full h-full object-cover grayscale group-hover:scale-105 group-hover:grayscale-0 transition-all duration-500 rounded-xl"
+              className="w-full h-full object-cover group-hover:scale-105 group-hover:grayscale-0 transition-all duration-500 rounded-xl"
               src={props.imgUrl}
               alt="News"
             />
@@ -30,7 +30,7 @@ function EverythingCard(props) {
         {/* Source */}
         <div className="flex flex-col items-center text-gray-600 dark:text-gray-400 text-sm gap-1">
           <span className="font-medium text-gray-500 dark:text-gray-400">
-            Source
+            Source:
           </span>
           <a
             href={props.url}
