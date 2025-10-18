@@ -149,8 +149,10 @@ function Header() {
               ))}
             </ul>
           </li>
-          <li>
-            {/* Use the ToggleButton */}
+          <li className="flex justify-between items-center gap-4">
+            <h2 className="text-gray-800 dark:text-gray-200 text-sm font-medium">
+              {theme === "dark-theme" ? "🌙" : "🔆"}
+            </h2>
             <ToggleButton theme={theme} toggleTheme={toggleTheme} />
           </li>
         </ul>

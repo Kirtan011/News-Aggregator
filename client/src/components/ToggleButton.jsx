@@ -1,74 +1,69 @@
-// src/components/ToggleButton.js
 import React from "react";
 
 function ToggleButton({ theme, toggleTheme }) {
   return (
-    <div className="theme-toggle-container">
+    <div className="toggle-container">
       <input
         type="checkbox"
-        className="checkbox"
-        id="checkbox"
-        checked={theme === "dark-theme"} // <-- important: checked = dark-theme now
+        id="theme-toggle"
+        className="toggle-input"
+        checked={theme === "dark-theme"}
         onChange={toggleTheme}
       />
-      <label htmlFor="checkbox" className="checkbox-label">
-        <i className="fas fa-sun"></i> {/* left icon */}
-        <i className="fas fa-moon"></i> {/* right icon */}
-        <span className="ball"></span>
+      <label htmlFor="theme-toggle" className="toggle-label">
+        <span className="toggle-ball"></span>
       </label>
 
       <style jsx>{`
-        .theme-toggle-container {
+        .toggle-container {
           display: flex;
           align-items: center;
+          justify-content: center;
         }
 
-        .checkbox {
+        /* Hide checkbox */
+        .toggle-input {
           display: none;
         }
 
-        .checkbox-label {
-          display: flex;
-          align-items: center;
-          cursor: pointer;
-          position: relative;
-          width: 60px;
-          height: 30px;
-          background: #444;
+        /* Outer track */
+        .toggle-label {
+          width: 50px;
+          height: 26px;
+          background: #ccc;
           border-radius: 50px;
-          padding: 0px;
-          padding-bottom: 5px;
-          box-sizing: border-box;
-        }
-
-        .checkbox-label .ball {
-          width: 10px;
-          height: 10px;
-          background-color: #fff;
-          border-radius: 10%;
-          transition: 0.3s;
           position: relative;
-          left: 0;
+          cursor: pointer;
+          transition: background 0.3s ease;
         }
 
-        .checkbox:checked + .checkbox-label .ball {
-          transform: translateX(29px);
-          background-color: #ff9800;
-        }
-
-        .checkbox-label i {
+        /* The small circle */
+        .toggle-ball {
           position: absolute;
-          font-size: 16px;
+          top: 3px;
+          left: 3px;
+          width: 20px;
+          height: 20px;
+          background: white;
+          border-radius: 50%;
+          transition: all 0.3s ease;
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
         }
 
-        .checkbox-label i.fa-sun {
-          left: 8px;
-          color: yellow;
+        /* When checked (dark mode) */
+        .toggle-input:checked + .toggle-label {
+          background: lightblue; /* dark theme bg */
         }
 
-        .checkbox-label i.fa-moon {
-          right: 8px;
-          color: white;
+        .toggle-input:checked + .toggle-label .toggle-ball {
+          left: 27px;
+          background: black; /* cyan glow */
+          box-shadow: 0 0 10px #00d0ff;
+        }
+
+        /* Hover subtle effect */
+        .toggle-label:hover .toggle-ball {
+          transform: scale(1.1);
         }
       `}</style>
     </div>
