@@ -22,6 +22,10 @@ function CountryNews() {
   function handleNext() {
     setPage(page + 1);
   }
+  const backendUrl =
+    window.location.hostname === "localhost"
+      ? "http://localhost:3000"
+      : "https://news-aggregator-backend-ymh6.onrender.com";
 
   useEffect(() => {
     // Handle restricted countries
@@ -35,7 +39,7 @@ function CountryNews() {
     setError(null);
 
     fetch(
-      `https://news-aggregator-backend-ymh6.onrender.com/country/${params.iso}?page=${page}&pageSize=${pageSize}`
+      `${backendUrl}/country/${params.iso}?page=${page}&pageSize=${pageSize}`
     )
       .then((response) => {
         if (response.ok) return response.json();
@@ -59,7 +63,7 @@ function CountryNews() {
   }, [page, params.iso]);
 
   const RestrictionCard = () => (
-    <div className="flex flex-col items-center justify-center text-center bg-gradient-to-br from-gray-800 to-gray-900 text-white rounded-2xl shadow-xl p-10 mt-16 mx-4 sm:mx-auto max-w-md border border-gray-700">
+    <div className="flex flex-col items-center justify-center text-center bg-gradient-to-br from-gray-800 to-gray-900 text-white rounded-2xl shadow-xl p-10 mt-32 mx-4 sm:mx-auto max-w-md border border-gray-700">
       <FontAwesomeIcon
         icon={faTriangleExclamation}
         className="text-yellow-400 text-5xl mb-4"

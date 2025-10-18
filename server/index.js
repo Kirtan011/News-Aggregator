@@ -1,7 +1,7 @@
-import dotenv from 'dotenv';
-import express from 'express';
-import axios from 'axios';
-import cors from 'cors';
+import dotenv from "dotenv";
+import express from "express";
+import axios from "axios";
+import cors from "cors";
 
 // Load environment variables from .env file
 dotenv.config();
@@ -9,11 +9,13 @@ dotenv.config();
 const app = express();
 
 // CORS configuration
-app.use(cors({
-  origin: '*',
-  methods: ['GET', 'POST', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
+app.use(
+  cors({
+    origin: "*",
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 
 // Fetch news by search query
 const fetchNewsBySearch = async (query) => {
@@ -33,8 +35,8 @@ const fetchNewsBySearch = async (query) => {
 };
 
 // Search news
-app.get('/search', async (req, res) => {
-  const { q } = req.query;  // 'q' is the search query
+app.get("/search", async (req, res) => {
+  const { q } = req.query; // 'q' is the search query
 
   if (q) {
     const news = await fetchNewsBySearch(q);
@@ -58,7 +60,10 @@ async function makeApiRequest(url) {
       data: response.data,
     };
   } catch (error) {
-    console.error("API request error:", error.response ? error.response.data : error);
+    console.error(
+      "API request error:",
+      error.response ? error.response.data : error
+    );
     return {
       status: 500,
       success: false,
@@ -71,9 +76,11 @@ async function makeApiRequest(url) {
 app.get("/all-news", async (req, res) => {
   let pageSize = parseInt(req.query.pageSize) || 80;
   let page = parseInt(req.query.page) || 1;
-  let q = req.query.q || 'world'; // Default search query if none provided
+  let q = req.query.q || "world"; // Default search query if none provided
 
-  let url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(q)}&page=${page}&pageSize=${pageSize}&apiKey=${process.env.API_KEY}`;
+  let url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(
+    q
+  )}&page=${page}&pageSize=${pageSize}&apiKey=${process.env.API_KEY}`;
   const result = await makeApiRequest(url);
   res.status(result.status).json(result);
 });
