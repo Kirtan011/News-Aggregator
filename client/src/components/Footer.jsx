@@ -18,7 +18,7 @@ function Footer() {
             href="https://github.com/Kirtan011"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white hover:text-blue-500 transition-colors"
+            className="text-white cursor-pointer hover:text-blue-500 transition-colors"
           >
             <FaGithub size={24} />
           </a>
@@ -26,7 +26,7 @@ function Footer() {
             href="https://linkedin.com/in/kirtan-suthar-479940264"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white hover:text-blue-500 transition-colors"
+            className="text-white cursor-pointer hover:text-blue-500 transition-colors"
           >
             <FaLinkedin size={24} />
           </a>
