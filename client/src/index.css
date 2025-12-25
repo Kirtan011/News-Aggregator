@@ -303,6 +303,57 @@ footer {
 .loader::after {
     transform: rotate(45deg);
 }
+.fact-box {
+    max-width: 600px;
+    padding: 14px 18px;
+    text-align: center;
+    border-radius: 10px;
+
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--heading);
+
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .fact-box {
+        max-width: 90%;
+        font-size: 0.9rem;
+        padding: 10px 14px;
+    }
+}
+
+/* Fade Animation */
+.fade-text {
+    animation: fade 2.5s infinite ease-in-out;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    15% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    85% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+}
 
 @keyframes l19 {
     100% {
